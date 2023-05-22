@@ -65,6 +65,7 @@ Les utilisateurs de Twitter sont les premiers à savoir.
     backgroundColor:'#1d9bf0',
     borderColor:'white'  
     }} 
+    
     onClick={showModal}>Se connecter</Button>
     <SeConnecterPopUp 
         open={isVisivleSeConnecter}

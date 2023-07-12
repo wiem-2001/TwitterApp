@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal,Row,Col,Button,Input } from 'antd';
 import TwitterImage from '../../../assets/icons/Twitter_bird_logo.svg.png';
-const SeConnecterPopUp = ({ open,onClose })=>
+const SinscrirePopUp = ({ open,onClose })=>
 {
     return (
         <Modal
@@ -13,18 +13,18 @@ const SeConnecterPopUp = ({ open,onClose })=>
       >
         <Row>
             <Col span={5}>
-
             </Col>
             <Col span={16}>
                 <img alt='twitter icon' src={TwitterImage} style={{ height: '40px', width: '50px' ,display:'flex',justifyContent:'center' ,position:'relative',left:'8rem'}}/>
-            <p style={{fontWeight:'bold',display:'flex',justifyContent:'center',fontSize:'30px'}}>Connecter-vous à Twitter</p>
+            <p style={{fontWeight:'bold',display:'flex',justifyContent:'center',fontSize:'30px'}}>Rejoignez Twitter</p>
             <Button block style={{marginTop:'0.7rem',borderRadius:'15px'}}>S'inscrire avec Google</Button>
      <Button block style={{marginTop:'0.7rem',borderRadius:'15px',fontWeight:'bold'}}>S'inscrire avec Apple</Button>
      <p style={{position:'relative',left:'8rem'}}>ou</p>
-     <Input placeholder="Numéro de téléphone ,adresse email ou nom ..." style={{height:'4rem'}}/>
-     <Button block style={{marginTop:'0.7rem',borderRadius:'15px',backgroundColor:'black',color:'white',fontWeight:'bold'}}>Suivant</Button>
-     <Button block style={{marginTop:'0.7rem',borderRadius:'15px',fontWeight:'bold'}}>mot de passe oublié ? </Button>
-<span>Vous n'avez pas de compte ?</span><span style={{color:'Blue'}}> Inscrivez-vous</span>
+     <Button block style={{marginTop:'0.7rem',borderRadius:'15px',backgroundColor:'black',color:'white',fontWeight:'bold'}}>Créer un compte</Button>
+<span>En vous inscrivant, vous acceptez les Conditions d'utilisation et la Politique de confidentialité, notamment l'Utilisation des cookies.</span><span style={{color:'Blue'}}> Inscrivez-vous</span>
+<div>
+    <span>Vous avez déjà un compte ? </span> <span style={{color:'Blue'}}> Connectez-vous.</span>
+</div>
             </Col>
             <Col span={6}>
             </Col>
@@ -33,4 +33,4 @@ const SeConnecterPopUp = ({ open,onClose })=>
     )
 }
 
-export default SeConnecterPopUp;
+export default SinscrirePopUp;

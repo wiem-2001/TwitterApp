@@ -3,19 +3,24 @@ import { Layout,Row,Col,Button, Space } from 'antd';
 import { InsertRowBelowOutlined } from "@ant-design/icons";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 import SeConnecterPopUp from "../content/seConnecterPopUp";
+import SinscrirePopUp  from "../content/sInscrirePopUp";
 const { Footer } = Layout;
 const FooterTwitter = ()=>{
 
   const [isvisible, setIsVisible] = useState(true);
-  const [isVisivleSeConnecter, setisVisivleSeConnecter] = useState(false);
-  const showModal = () => {
-    setisVisivleSeConnecter(true);
+  const [isVisibleSeConnPopUp, setisVisibleSeConnPopUp] = useState(false);
+  const [isVisibleSinscPopUp, setisVisibleSinscPopUp] = useState(false);
+
+  const showConnModal = () => {
+    setisVisibleSeConnPopUp(true);
   };
-  const handleOk = () => {
-    setisVisivleSeConnecter(false);
+  const showSinscModal = () => {
+    setisVisibleSinscPopUp(true);
   };
+
   const handleCancel = () => {
-    setisVisivleSeConnecter(false);
+    setisVisibleSeConnPopUp(false);
+    setisVisibleSinscPopUp(false)
   };
   useEffect(() => {
     const handleWindowResize = () => {
@@ -66,17 +71,21 @@ Les utilisateurs de Twitter sont les premiers à savoir.
     borderColor:'white'  
     }} 
     
-    onClick={showModal}>Se connecter</Button>
+    onClick={showConnModal}>Se connecter</Button>
     <SeConnecterPopUp 
-        open={isVisivleSeConnecter}
+        open={isVisibleSeConnPopUp}
         onClose={handleCancel}/>
-<Button block style={{
+<Button block 
+onClick={showSinscModal}
+style={{
     marginLeft:'1rem',
     color:'black',
     borderRadius:'20px' ,
     width:isvisible ? "120px" : "13rem",
     fontWeight:'bold',fontSize:'15px'
     }}>S'inscrire</Button>
+    <SinscrirePopUp open={isVisibleSinscPopUp}
+        onClose={handleCancel}/>
 </span>
     </Row>
     </Col>
